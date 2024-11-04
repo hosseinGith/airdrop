@@ -49,6 +49,7 @@ addChargeHand();
 //   confirmButtonText: "تایید",
 // });
 function touchCoin(e) {
+  e.preventDefault();
   Array.from(e.touches).forEach((touch) => {
     let plusCoin = user_data.coinLimited;
     if (user_data.turbo.status) {
