@@ -45,7 +45,7 @@ addChargeHand();
 //   icon: "info",
 //   confirmButtonText: "تایید",
 // });
-miningButton.addEventListener("click", function (e) {
+miningButton.addEventListener("mouseup", function (e) {
   let plusCoin = user_data.coinLimited;
   if (user_data.turbo.status) {
     if (user_data.turbo.endTime > Date.now())
