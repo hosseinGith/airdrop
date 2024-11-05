@@ -67,9 +67,17 @@ rechargeActive.addEventListener("click", () => {
     user_data.userAllCharge >= user_data.chargLimited
   )
     return;
-  user_data.recharge.use++;
-  user_data.userAllCharge = user_data.chargLimited;
-  setValues();
+  Swal.fire({
+    text: "asd",
+    icon: "info",
+    confirmButtonText: "use",
+  }).then((result) => {
+    if (result.isConfirmed) {
+      user_data.recharge.use++;
+      user_data.userAllCharge = user_data.chargLimited;
+      setValues();
+    }
+  });
 });
 
 upgradeMultiTap.addEventListener("click", () => {
