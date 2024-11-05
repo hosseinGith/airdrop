@@ -54,12 +54,19 @@ function upgradeSkil(skil) {
 turboActive.addEventListener("click", () => {
   if (user_data.turbo.status || user_data.turbo.use >= user_data.turbo.limit)
     return;
-
-  user_data.turbo.status = true;
-  user_data.turbo.use++;
-  user_data.turbo.status = true;
-  user_data.turbo.endTime = Date.now() + 1000 * 10;
-  setValues();
+  Swal.fire({
+    text: "Turbo",
+    icon: "info",
+    confirmButtonText: "use",
+  }).then((result) => {
+    if (result.isConfirmed) {
+      user_data.turbo.status = true;
+      user_data.turbo.use++;
+      user_data.turbo.status = true;
+      user_data.turbo.endTime = Date.now() + 1000 * 10;
+      setValues();
+    }
+  });
 });
 rechargeActive.addEventListener("click", () => {
   if (
@@ -68,7 +75,7 @@ rechargeActive.addEventListener("click", () => {
   )
     return;
   Swal.fire({
-    text: "asd",
+    text: "Recharge",
     icon: "info",
     confirmButtonText: "use",
   }).then((result) => {
