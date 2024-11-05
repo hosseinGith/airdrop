@@ -84,7 +84,7 @@ if (matchMedia("(pointer:fine)").matches) {
   miningButton.addEventListener("touchstart", function (e) {
     e.preventDefault();
     Array.from(e.touches).forEach((touch) => {
-      touchCoin(touch.clientX, touch.clientX);
+      touchCoin(touch.clientX, touch.clientY);
     });
   });
 }
