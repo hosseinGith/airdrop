@@ -59,13 +59,11 @@ turboActive.addEventListener("click", () => {
     icon: "info",
     confirmButtonText: "use",
   }).then((result) => {
-    if (result.isConfirmed) {
-      user_data.turbo.status = true;
-      user_data.turbo.use++;
-      user_data.turbo.status = true;
-      user_data.turbo.endTime = Date.now() + 1000 * 10;
-      setValues();
-    }
+    user_data.turbo.status = true;
+    user_data.turbo.use++;
+    user_data.turbo.status = true;
+    user_data.turbo.endTime = Date.now() + 1000 * 10;
+    setValues();
   });
 });
 rechargeActive.addEventListener("click", () => {
@@ -78,12 +76,10 @@ rechargeActive.addEventListener("click", () => {
     text: "Recharge",
     icon: "info",
     confirmButtonText: "use",
-  }).then((result) => {
-    if (result.isConfirmed) {
-      user_data.recharge.use++;
-      user_data.userAllCharge = user_data.chargLimited;
-      setValues();
-    }
+  }).then(() => {
+    user_data.recharge.use++;
+    user_data.userAllCharge = user_data.chargLimited;
+    setValues();
   });
 });
 
